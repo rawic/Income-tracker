@@ -14,7 +14,7 @@
     "styled-components": "^5.2.0",
     "styled-reset": "^4.2.3"
   },
-  "homepage": "https://rawic.github.io/Income-tracker/",
+  "homepage": ".",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
