@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/income-tracker/static/css/main.13cda9c6.chunk.css",
-    "main.js": "/income-tracker/static/js/main.484a3a8e.chunk.js",
-    "main.js.map": "/income-tracker/static/js/main.484a3a8e.chunk.js.map",
-    "runtime-main.js": "/income-tracker/static/js/runtime-main.3f2f0c40.js",
-    "runtime-main.js.map": "/income-tracker/static/js/runtime-main.3f2f0c40.js.map",
-    "static/css/2.455cd81f.chunk.css": "/income-tracker/static/css/2.455cd81f.chunk.css",
-    "static/js/2.4539585c.chunk.js": "/income-tracker/static/js/2.4539585c.chunk.js",
-    "static/js/2.4539585c.chunk.js.map": "/income-tracker/static/js/2.4539585c.chunk.js.map",
-    "index.html": "/income-tracker/index.html",
-    "precache-manifest.e3c2e89d0ff2c8e726baf6f0e2948325.js": "/income-tracker/precache-manifest.e3c2e89d0ff2c8e726baf6f0e2948325.js",
-    "service-worker.js": "/income-tracker/service-worker.js",
-    "static/css/2.455cd81f.chunk.css.map": "/income-tracker/static/css/2.455cd81f.chunk.css.map",
-    "static/css/main.13cda9c6.chunk.css.map": "/income-tracker/static/css/main.13cda9c6.chunk.css.map",
-    "static/js/2.4539585c.chunk.js.LICENSE.txt": "/income-tracker/static/js/2.4539585c.chunk.js.LICENSE.txt",
-    "static/media/background-pattern.jpg": "/income-tracker/static/media/background-pattern.caaa4419.jpg"
+    "main.css": "/Income-tracker/static/css/main.13cda9c6.chunk.css",
+    "main.js": "/Income-tracker/static/js/main.484a3a8e.chunk.js",
+    "main.js.map": "/Income-tracker/static/js/main.484a3a8e.chunk.js.map",
+    "runtime-main.js": "/Income-tracker/static/js/runtime-main.e59dd177.js",
+    "runtime-main.js.map": "/Income-tracker/static/js/runtime-main.e59dd177.js.map",
+    "static/css/2.455cd81f.chunk.css": "/Income-tracker/static/css/2.455cd81f.chunk.css",
+    "static/js/2.c8a0afdc.chunk.js": "/Income-tracker/static/js/2.c8a0afdc.chunk.js",
+    "static/js/2.c8a0afdc.chunk.js.map": "/Income-tracker/static/js/2.c8a0afdc.chunk.js.map",
+    "index.html": "/Income-tracker/index.html",
+    "precache-manifest.0843d5b8b5663854c828da82a9fdf8cb.js": "/Income-tracker/precache-manifest.0843d5b8b5663854c828da82a9fdf8cb.js",
+    "service-worker.js": "/Income-tracker/service-worker.js",
+    "static/css/2.455cd81f.chunk.css.map": "/Income-tracker/static/css/2.455cd81f.chunk.css.map",
+    "static/css/main.13cda9c6.chunk.css.map": "/Income-tracker/static/css/main.13cda9c6.chunk.css.map",
+    "static/js/2.c8a0afdc.chunk.js.LICENSE.txt": "/Income-tracker/static/js/2.c8a0afdc.chunk.js.LICENSE.txt",
+    "static/media/background-pattern.jpg": "/Income-tracker/static/media/background-pattern.caaa4419.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3f2f0c40.js",
+    "static/js/runtime-main.e59dd177.js",
     "static/css/2.455cd81f.chunk.css",
-    "static/js/2.4539585c.chunk.js",
+    "static/js/2.c8a0afdc.chunk.js",
     "static/css/main.13cda9c6.chunk.css",
     "static/js/main.484a3a8e.chunk.js"
   ]
