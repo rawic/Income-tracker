@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/income-tracker/static/css/main.13cda9c6.chunk.css",
+    "main.js": "/income-tracker/static/js/main.484a3a8e.chunk.js",
+    "main.js.map": "/income-tracker/static/js/main.484a3a8e.chunk.js.map",
+    "runtime-main.js": "/income-tracker/static/js/runtime-main.3f2f0c40.js",
+    "runtime-main.js.map": "/income-tracker/static/js/runtime-main.3f2f0c40.js.map",
+    "static/css/2.455cd81f.chunk.css": "/income-tracker/static/css/2.455cd81f.chunk.css",
+    "static/js/2.4539585c.chunk.js": "/income-tracker/static/js/2.4539585c.chunk.js",
+    "static/js/2.4539585c.chunk.js.map": "/income-tracker/static/js/2.4539585c.chunk.js.map",
+    "index.html": "/income-tracker/index.html",
+    "precache-manifest.e3c2e89d0ff2c8e726baf6f0e2948325.js": "/income-tracker/precache-manifest.e3c2e89d0ff2c8e726baf6f0e2948325.js",
+    "service-worker.js": "/income-tracker/service-worker.js",
+    "static/css/2.455cd81f.chunk.css.map": "/income-tracker/static/css/2.455cd81f.chunk.css.map",
+    "static/css/main.13cda9c6.chunk.css.map": "/income-tracker/static/css/main.13cda9c6.chunk.css.map",
+    "static/js/2.4539585c.chunk.js.LICENSE.txt": "/income-tracker/static/js/2.4539585c.chunk.js.LICENSE.txt",
+    "static/media/background-pattern.jpg": "/income-tracker/static/media/background-pattern.caaa4419.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f2f0c40.js",
+    "static/css/2.455cd81f.chunk.css",
+    "static/js/2.4539585c.chunk.js",
+    "static/css/main.13cda9c6.chunk.css",
+    "static/js/main.484a3a8e.chunk.js"
+  ]
+}
