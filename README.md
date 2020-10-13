@@ -26,9 +26,10 @@ An app built in two hours. I'm going to improve it soon.
 yarn
 yarn start
 ```
+
 ### Built With
 
-- React (Styled Components, Styled Reset, moment, React Day Picker)
+- React (Styled Components, Styled Reset, moment, React Day Picker, Font Awesome)
 
 ## License
 

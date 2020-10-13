@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import initialIncomes from './data';
 import Layout from './components/Layout/Layout';
 import Header from './components/Header/Header';
 import IncomeForm from './components/Income/Form/Form';
 import IncomeList from './components/Income/List/List';
 
 const App = () => {
-  const [income, setIncome] = useState([]);
+  const [income, setIncome] = useState(initialIncomes);
   const [totalIncome, setTotalIncome] = useState(0);
 
   useEffect(() => {
