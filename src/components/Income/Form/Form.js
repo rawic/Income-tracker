@@ -1,55 +1,40 @@
-import React, { useReducer } from 'react';
+import React from 'react';
+import useForm from 'hooks/useForm';
+import validate from 'utilities/form-validation';
 import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
 import DayPicker from './DayPicker/DayPicker';
 import { Form } from './Form.styles';
 
 const IncomeForm = ({ income, setIncome }) => {
-  const [userInput, setUserInput] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      description: '',
-      amount: '',
-      date: '',
-    }
+  const { formFields, errors, handleChange, handleSubmit } = useForm(
+    addIncome,
+    validate
   );
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setUserInput({ [name]: value });
-  };
+  function addIncome() {
+    setIncome([...income, formFields]);
+  }
 
   const handleDayChange = (selectedDay, modifiers, { state: { value } }) => {
-    setUserInput({ date: value });
-  };
-
-  const addIncome = (e) => {
-    e.preventDefault();
-
-    setIncome([
-      ...income,
-      {
-        description: userInput.description,
-        date: userInput.date,
-        amount: userInput.amount,
-      },
-    ]);
-
-    setUserInput({
-      description: '',
-      date: '',
-      amount: '',
-    });
+    handleChange(null, value);
   };
 
   return (
-    <Form onSubmit={addIncome}>
+    <Form onSubmit={handleSubmit}>
+      {/* TODO: Use portal to display errors in a toast message */}
+      {/* {Object.entries(errors).map(([field, msg]) => (
+        <p>
+          {field}
+          {msg}
+        </p>
+      ))} */}
+
       <Input
         type="text"
         id="description"
         placeholder="Income description"
-        value={userInput.description}
+        value={formFields.description}
         onChange={handleChange}
         width="260"
       />
@@ -58,14 +43,14 @@ const IncomeForm = ({ income, setIncome }) => {
         type="number"
         id="amount"
         placeholder="Amount"
-        value={userInput.amount}
+        value={formFields.amount}
         onChange={handleChange}
       />
 
       <DayPicker
         onDayChange={handleDayChange}
         placeholder="Date"
-        value={userInput.date}
+        value={formFields.date}
       />
 
       <SubmitButton>Add income</SubmitButton>
