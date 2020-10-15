@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
 		${reset}
 		background-image: url(${backgroundPattern});
-		background-position: center;
+		background-position: top center;
 		color: ${({ theme }) => theme.color.white};
 		display: flex;
 		font-family: ${({ theme }) => theme.font.family};

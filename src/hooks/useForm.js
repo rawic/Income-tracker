@@ -19,11 +19,14 @@ const useForm = (callback, validate) => {
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
+
     setErrors(validate(formFields));
     setIsSubmitting(true);
   };
 
   const handleChange = (event, day) => {
+    if (isSubmitting) setIsSubmitting(false);
+
     if (event) {
       event.persist();
       setFormFields((fields) => ({
@@ -43,6 +46,7 @@ const useForm = (callback, validate) => {
     handleSubmit,
     formFields,
     errors,
+    isSubmitting,
   };
 };
 

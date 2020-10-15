@@ -1,10 +1,12 @@
 import React from 'react';
 import { Heading, Total } from './Header.styles';
 
+import { formatPrice } from 'utilities';
+
 const Header = ({ totalIncome }) => (
   <header>
     <Heading>Income Tracker</Heading>
-    <Total>PLN {totalIncome}</Total>
+    <Total>PLN {formatPrice(totalIncome)}</Total>
   </header>
 );
 

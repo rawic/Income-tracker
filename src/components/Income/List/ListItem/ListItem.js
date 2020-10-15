@@ -3,6 +3,8 @@ import { ThemeContext } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StyledListItem, StyledSingleInfo } from './ListItem.styles';
 
+import { formatPrice } from 'utilities';
+
 // TODO: Improve component name
 
 const ListItem = ({
@@ -36,7 +38,7 @@ const ListItem = ({
           icon={['fas', 'coins']}
           color={themeContext.color.highlight}
         />{' '}
-        {amount}
+        {formatPrice(amount)}
       </StyledSingleInfo>
     </StyledListItem>
   );

@@ -1,4 +1,16 @@
-export default function validate(values) {
+export function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0 && obj.constructor === Object;
+}
+
+export function formatPrice(price, options = {}) {
+  options.minimumFractionDigits = 2;
+
+  const formattedPrice = price.toLocaleString('de-DE', options);
+
+  return formattedPrice;
+}
+
+export function validate(values) {
   let errors = {};
 
   if (!values.description) {

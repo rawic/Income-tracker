@@ -1,34 +1,32 @@
 import React from 'react';
 import useForm from 'hooks/useForm';
-import validate from 'utilities/form-validation';
+import ShowErrors from './ShowErrors/ShowErrors';
 import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
 import DayPicker from './DayPicker/DayPicker';
+
 import { Form } from './Form.styles';
+import { validate } from 'utilities';
 
 const IncomeForm = ({ income, setIncome }) => {
-  const { formFields, errors, handleChange, handleSubmit } = useForm(
-    addIncome,
-    validate
-  );
+  const {
+    formFields,
+    errors,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+  } = useForm(addIncome, validate);
 
   function addIncome() {
     setIncome([...income, formFields]);
   }
 
-  const handleDayChange = (selectedDay, modifiers, { state: { value } }) => {
+  const handleDayChange = (selectedDay, modifiers, { state: { value } }) =>
     handleChange(null, value);
-  };
 
   return (
     <Form onSubmit={handleSubmit}>
-      {/* TODO: Use portal to display errors in a toast message */}
-      {/* {Object.entries(errors).map(([field, msg]) => (
-        <p>
-          {field}
-          {msg}
-        </p>
-      ))} */}
+      <ShowErrors errors={errors} isSubmitting={isSubmitting} />
 
       <Input
         type="text"
