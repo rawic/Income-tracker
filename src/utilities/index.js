@@ -1,3 +1,5 @@
+import { DATE_REGEX } from './constants';
+
 export function isEmptyObject(obj) {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
@@ -22,6 +24,11 @@ export function validate(values) {
     errors.amount = 'Amount is required';
   } else if (isNaN(values.amount)) {
     errors.amount = 'Amount must be a number';
+  }
+  if (!values.date) {
+    errors.date = 'Date is required';
+  } else if (!values.date.match(DATE_REGEX)) {
+    errors.date = 'Date must be a valid date (DD/MM/YYYY)';
   }
   return errors;
 }

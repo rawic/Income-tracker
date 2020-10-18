@@ -21,8 +21,8 @@ const IncomeForm = ({ income, setIncome }) => {
     setIncome([...income, formFields]);
   }
 
-  const handleDayChange = (selectedDay, modifiers, { state: { value } }) =>
-    handleChange(null, value);
+  const handleDayChange = (selectedDay, modifiers, dayPickerInput) =>
+    handleChange(null, dayPickerInput.getInput().value);
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -42,6 +42,7 @@ const IncomeForm = ({ income, setIncome }) => {
         id="amount"
         placeholder="Amount"
         value={formFields.amount}
+        min="0"
         onChange={handleChange}
       />
 
