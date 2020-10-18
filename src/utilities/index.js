@@ -25,10 +25,13 @@ export function validate(values) {
   } else if (isNaN(values.amount)) {
     errors.amount = 'Amount must be a number';
   }
-  if (!values.date) {
+  if (!values.date.formatted) {
     errors.date = 'Date is required';
-  } else if (!values.date.match(DATE_REGEX)) {
+  } else if (!values.date.formatted.match(DATE_REGEX)) {
     errors.date = 'Date must be a valid date (DD/MM/YYYY)';
   }
   return errors;
 }
+
+export const sortDateDesc = (a, b) =>
+  new Date(b.date.date) - new Date(a.date.date);

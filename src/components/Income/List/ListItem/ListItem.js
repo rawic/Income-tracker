@@ -31,7 +31,7 @@ const ListItem = ({
           icon={['far', 'clock']}
           color={themeContext.color.secondary}
         />{' '}
-        {date}
+        {date.formatted}
       </StyledSingleInfo>
       <StyledSingleInfo>
         <FontAwesomeIcon

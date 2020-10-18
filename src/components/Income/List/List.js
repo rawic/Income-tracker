@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'components/Table/Table';
+import { sortDateDesc } from 'utilities';
 import { StyledHeading, StyledWrapper } from './List.styles';
 import ListItem from './ListItem/ListItem';
 
@@ -10,11 +11,6 @@ const IncomeList = ({ income, setIncome }) => {
   const removeIncome = (i) => {
     const newIncome = income.filter((v, index) => index !== i);
     setIncome(newIncome);
-  };
-
-  // TODO: Fix sortByDate
-  const sortByDate = (a, b) => {
-    return a.date - b.date;
   };
 
   return (
@@ -28,7 +24,7 @@ const IncomeList = ({ income, setIncome }) => {
         </Table.Headings>
 
         <Table.Body>
-          {income.sort(sortByDate).map((value, index) => (
+          {income.sort(sortDateDesc).map((value, index) => (
             <ListItem
               key={index}
               income={value}

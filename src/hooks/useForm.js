@@ -24,7 +24,7 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
   };
 
-  const handleChange = (event, day) => {
+  const handleChange = (event, date) => {
     if (isSubmitting) setIsSubmitting(false);
 
     if (event) {
@@ -39,7 +39,7 @@ const useForm = (callback, validate) => {
     } else {
       setFormFields((fields) => ({
         ...fields,
-        date: day,
+        date,
       }));
     }
   };
