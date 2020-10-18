@@ -21,7 +21,7 @@ const IncomeForm = ({ income, setIncome }) => {
     setIncome([...income, formFields]);
   }
 
-  const handleDayChange = (selectedDay, modifiers, dayPickerInput) => {
+  const handleDayChange = (selectedDay = '', modifiers, dayPickerInput) => {
     const incomeDate = {
       date: selectedDay.toString(),
       formatted: dayPickerInput.getInput().value.trim(),
