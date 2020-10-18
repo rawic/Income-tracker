@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://rawic.github.io/Income-tracker/">
+  <a href="https://rawic.github.io/income-tracker/">
     <img src="readme/logo.svg" height="35" alt="rawic.me Logo">
   </a>
 
   <h3 align="center">Income tracker</h3>
 
   <p align="center">
-    Simple Income Tracker. <a href="https://rawic.github.io/Income-tracker/" target="_blank" rel="noopener noreferrer">Live</a>
+    Simple Income Tracker. <a href="https://rawic.github.io/income-tracker/" target="_blank" rel="noopener noreferrer">Live</a>
     <br />
     Built in 2 hours ⏱️
   </p>
@@ -14,7 +14,7 @@
 
 ## About Income Tracker
 
-<a align="center" href="https://rawic.github.io/Income-tracker/" rel="nofollow noopener noreferrer" target="blank">
+<a align="center" href="https://rawic.github.io/income-tracker/" rel="nofollow noopener noreferrer" target="blank">
   <img src="readme/app-screenshot.jpg" alt="rawic.me - home page" style="max-width: 100%;">
 </a>
 
@@ -39,6 +39,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Rafał Wichowski - [@rafalwichowski](https://twitter.com/rafalwichowski) - [hi@rawic.me](mailto:hi@rawic.me)
 
-Project Link: [https://rawic.github.io/Income-tracker/](https://rawic.github.io/Income-tracker/)
+Project Link: [https://rawic.github.io/income-tracker/](https://rawic.github.io/Income-tracker/)
 
 [app-screenshot]: readme/app-screenshot.jpg
