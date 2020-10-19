@@ -6,9 +6,14 @@
   <h3 align="center">Income tracker</h3>
 
   <p align="center">
-    Simple Income Tracker. <a href="https://rawic.github.io/income-tracker/" target="_blank" rel="noopener noreferrer">Live</a>
+    Simple Income Tracker built with React.
     <br />
-    Built in 2 hours ⏱️
+    <a href="https://rawic.github.io/income-tracker/" target="_blank" rel="noopener noreferrer"><strong>Live demo »</strong></a>
+    <br />
+    <br />
+    <a href="https://rawic.github.io/income-tracker/issues">Report Bug</a>
+    ·
+    <a href="https://rawic.github.io/income-tracker/issues">Request Feature</a>
   </p>
 </p>
 
@@ -18,18 +23,42 @@
   <img src="readme/app-screenshot.jpg" alt="rawic.me - home page" style="max-width: 100%;">
 </a>
 
-An app built in two hours. I'm going to improve it soon.
+## Getting started
+
+### Prerequisites
+
+- yarn
+
+```sh
+npm install -g yarn
+```
 
 ### Installation
 
+Using Yarn:
+
+1. Clone the repository
+
 ```sh
+https://github.com/rawic/income-tracker.git
+```
+
+2. Install NPM packages
+
+```
 yarn
-yarn start
 ```
 
 ### Built With
 
-- React (Styled Components, Styled Reset, moment, React Day Picker, Font Awesome)
+React:
+
+- Font Awesome
+- GSAP
+- Moment.js
+- React Day Picker
+- Styled Components
+- Styled Reset
 
 ## License
 
