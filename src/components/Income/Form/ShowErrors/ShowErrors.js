@@ -11,7 +11,7 @@ const ShowErrors = ({ errors, isSubmitting }) => {
     <Portal>
       <Toast.Wrapper>
         {Object.entries(errors).map(([field, msg], i) => (
-          <FadeInAnimation direction="up" delay={i / 5} key={field}>
+          <FadeInAnimation delay={i / 5} key={field}>
             <Toast>{msg}</Toast>
           </FadeInAnimation>
         ))}

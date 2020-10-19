@@ -3,9 +3,9 @@ import styled from 'styled-components';
 const StyledSubmitButton = styled.button`
   background-color: transparent;
   background-size: 200% auto;
-  border: 0;
-  border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  border: 0;
   color: ${({ theme }) => theme.color.white};
   flex-shrink: 0;
   flex-shrink: 0;

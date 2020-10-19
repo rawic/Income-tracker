@@ -32,9 +32,7 @@ const useForm = (callback, validate) => {
       setFormFields((fields) => ({
         ...fields,
         [event.target.name]:
-          event.target.type === 'number'
-            ? parseInt(event.target.value)
-            : event.target.value,
+          event.target.type === 'number' ? parseInt(event.target.value) : event.target.value,
       }));
     } else {
       setFormFields((fields) => ({

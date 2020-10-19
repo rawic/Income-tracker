@@ -4,16 +4,14 @@ export function isEmptyObject(obj) {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 
-export function formatPrice(price, options = {}) {
-  options.minimumFractionDigits = 2;
-
+export function formatPrice(price, options = { minimumFractionDigits: 2 }) {
   const formattedPrice = price.toLocaleString('de-DE', options);
 
   return formattedPrice;
 }
 
 export function validate(values) {
-  let errors = {};
+  const errors = {};
 
   if (!values.description) {
     errors.description = 'Description is required';
@@ -33,5 +31,4 @@ export function validate(values) {
   return errors;
 }
 
-export const sortDateDesc = (a, b) =>
-  new Date(b.date.date) - new Date(a.date.date);
+export const sortDateDesc = (a, b) => new Date(b.date.date) - new Date(a.date.date);

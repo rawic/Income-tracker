@@ -1,21 +1,18 @@
 import React from 'react';
 import useForm from 'hooks/useForm';
+import { validate } from 'utilities';
 import ShowErrors from './ShowErrors/ShowErrors';
 import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
 import DayPicker from './DayPicker/DayPicker';
 
-import { Form } from './Form.styles';
-import { validate } from 'utilities';
+import { StyledForm } from './Form.styles';
 
 const IncomeForm = ({ income, setIncome }) => {
-  const {
-    formFields,
-    errors,
-    handleChange,
-    handleSubmit,
-    isSubmitting,
-  } = useForm(addIncome, validate);
+  const { formFields, errors, handleChange, handleSubmit, isSubmitting } = useForm(
+    addIncome,
+    validate
+  );
 
   function addIncome() {
     setIncome([...income, formFields]);
@@ -31,7 +28,7 @@ const IncomeForm = ({ income, setIncome }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit}>
       <ShowErrors errors={errors} isSubmitting={isSubmitting} />
 
       <Input
@@ -59,7 +56,7 @@ const IncomeForm = ({ income, setIncome }) => {
       />
 
       <SubmitButton>Add income</SubmitButton>
-    </Form>
+    </StyledForm>
   );
 };
 

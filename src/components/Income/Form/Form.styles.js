@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const StyledForm = styled.form`
   align-items: center;
   background-color: ${({ theme }) => theme.background.secondary};
   border-radius: ${({ theme }) => theme.borderRadius};

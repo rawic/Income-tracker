@@ -1,36 +1,15 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { gsap } from 'gsap';
 
-const FadeInAnimation = ({
-  children,
-  wrapperElement = 'div',
-  direction = null,
-  delay = 0,
-  ...props
-}) => {
+const distance = 50;
+
+const FadeInAnimation = ({ children, wrapperElement = 'div', delay = 0 }) => {
   const Component = wrapperElement;
-  let compRef = useRef(null);
-  const distance = 50;
-  let fadeDirection;
-  switch (direction) {
-    case 'left':
-      fadeDirection = { x: -distance };
-      break;
-    case 'right':
-      fadeDirection = { x: distance };
-      break;
-    case 'up':
-      fadeDirection = { y: distance };
-      break;
-    case 'down':
-      fadeDirection = { y: -distance };
-      break;
-    default:
-      fadeDirection = { x: 0 };
-  }
+  const compRef = useRef(null);
   useEffect(() => {
     gsap.from(compRef.current, 0.5, {
-      ...fadeDirection,
+      y: distance,
       opacity: 0,
       delay,
     });
@@ -39,12 +18,19 @@ const FadeInAnimation = ({
       opacity: 0,
       y: -100,
     });
-  }, [compRef, fadeDirection, delay]);
-  return (
-    <Component ref={compRef} {...props}>
-      {children}
-    </Component>
-  );
+  }, [compRef, delay]);
+  return <Component ref={compRef}>{children}</Component>;
+};
+
+FadeInAnimation.propTypes = {
+  children: PropTypes.node.isRequired,
+  wrapperElement: PropTypes.string,
+  delay: PropTypes.number,
+};
+
+FadeInAnimation.defaultProps = {
+  wrapperElement: 'div',
+  delay: 0,
 };
 
 export default FadeInAnimation;

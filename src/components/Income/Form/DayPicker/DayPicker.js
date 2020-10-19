@@ -1,36 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
+import PropTypes from 'prop-types';
+import StyledDayPicker from './DayPicker.styles';
 
-import { formatDate, parseDate } from 'react-day-picker/moment';
-
-const classNames = DayPickerInput.defaultProps.classNames;
-
-const DayPickerInputWrapper = ({ className = '', ...rest }) => (
-  <DayPickerInput
-    classNames={{
-      ...classNames,
-      container: `${classNames.container} ${className}`,
-    }}
-    format="DD/MM/YYYY"
-    formatDate={formatDate}
-    parseDate={parseDate}
-    placeholder={`${formatDate(new Date())}`}
-    {...rest}
-  />
+const DayPicker = ({ onDayChange, placeholder, value }) => (
+  <StyledDayPicker onDayChange={onDayChange} placeholder={placeholder} value={value} />
 );
 
-const DayPicker = styled(DayPickerInputWrapper)`
-  &.DayPickerInput {
-    width: 110px;
-  }
-  .DayPicker-Day {
-    color: ${({ theme }) => theme.color.highlight};
-  }
-  input {
-    color: ${({ theme }) => theme.color.dim};
-  }
-`;
+DayPicker.propTypes = {
+  onDayChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+};
+
+DayPicker.defaultProps = {
+  placeholder: '',
+};
 
 export default DayPicker;

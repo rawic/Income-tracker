@@ -4,7 +4,7 @@ const StyledInput = styled.input`
   align-items: center;
   color: ${({ theme }) => theme.color.dim};
   display: flex;
-  flex: ${({ width }) => (width ? '0 0 ' + width + 'px' : '1 0 0')};
+  flex: ${({ width }) => (width ? `0 0 ${width}px` : '1 0 0')};
   font-family: ${({ theme }) => theme.font.family};
   font-size: ${({ theme }) => theme.font.size.primary};
   font-weight: ${({ theme }) => theme.font.weight.medium};
@@ -12,7 +12,7 @@ const StyledInput = styled.input`
   min-width: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  width: ${({ width }) => width && width + 'px'};
+  width: ${({ width }) => width && `${width}px`};
 `;
 
 export default StyledInput;
