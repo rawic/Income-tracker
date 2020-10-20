@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import useForm from 'hooks/useForm';
 import { validate } from 'utilities';
+import { incomesType, setIncomesType } from 'types';
 import ShowErrors from './ShowErrors/ShowErrors';
 import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
 import DayPicker from './DayPicker/DayPicker';
 
-import { StyledForm } from './Form.styles';
+import StyledForm from './Form.styles';
 
-const IncomeForm = ({ income, setIncome }) => {
+const IncomeForm = ({ incomes, setIncomes }) => {
+  const addIncome = useCallback(
+    (formFields, setIsSubmitting) => {
+      setIncomes([...incomes, { id: uuidv4(), ...formFields }]);
+      setIsSubmitting(false);
+    },
+    [incomes, setIncomes]
+  );
+
   const { formFields, errors, handleChange, handleSubmit, isSubmitting } = useForm(
     addIncome,
     validate
   );
-
-  function addIncome() {
-    setIncome([...income, formFields]);
-  }
 
   const handleDayChange = (selectedDay = '', modifiers, dayPickerInput) => {
     const incomeDate = {
@@ -33,31 +39,38 @@ const IncomeForm = ({ income, setIncome }) => {
 
       <Input
         type="text"
-        id="description"
+        name="description"
         placeholder="Income description"
         value={formFields.description}
-        onChange={handleChange}
+        autoComplete="off"
         width="260"
+        onChange={handleChange}
       />
 
       <Input
         type="number"
-        id="amount"
+        name="amount"
+        min="0"
+        step="0.01"
         placeholder="Amount"
         value={formFields.amount}
-        min="0"
         onChange={handleChange}
       />
 
       <DayPicker
-        onDayChange={handleDayChange}
         placeholder="Date"
-        value={formFields.date.formatted}
+        value={formFields.date.formatted || ''}
+        onDayChange={handleDayChange}
       />
 
       <SubmitButton>Add income</SubmitButton>
     </StyledForm>
   );
+};
+
+IncomeForm.propTypes = {
+  incomes: incomesType.isRequired,
+  setIncomes: setIncomesType.isRequired,
 };
 
 export default IncomeForm;

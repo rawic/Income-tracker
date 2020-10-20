@@ -13,7 +13,7 @@ DayPicker.propTypes = {
 };
 
 DayPicker.defaultProps = {
-  placeholder: '',
+  placeholder: null,
 };
 
 export default DayPicker;

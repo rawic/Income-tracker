@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FadeInAnimation from 'components/FadeInAnimation/FadeInAnimation';
 import Portal from 'components/Portal/Portal';
 import Toast from 'components/Toast/Toast';
 import { isEmptyObject } from 'utilities';
 
-const ShowErrors = ({ errors, isSubmitting }) => {
-  if (isEmptyObject(errors) || !isSubmitting) return null;
+const ShowErrors = React.memo(({ errors }) => {
+  if (isEmptyObject(errors)) return null;
 
   return (
     <Portal>
@@ -18,6 +19,10 @@ const ShowErrors = ({ errors, isSubmitting }) => {
       </Toast.Wrapper>
     </Portal>
   );
+});
+
+ShowErrors.propTypes = {
+  errors: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default ShowErrors;

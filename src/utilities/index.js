@@ -18,11 +18,13 @@ export function validate(values) {
   } else if (values.description.length < 5) {
     errors.description = 'Description must be 5 or more characters';
   }
+
   if (!values.amount) {
     errors.amount = 'Amount is required';
-  } else if (isNaN(values.amount)) {
+  } else if (Number.isNaN(values.amount)) {
     errors.amount = 'Amount must be a number';
   }
+
   if (!values.date.formatted) {
     errors.date = 'Date is required';
   } else if (!values.date.formatted.match(DATE_REGEX)) {

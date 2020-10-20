@@ -1,13 +1,14 @@
 import React from 'react';
+import { incomesType, setIncomesType } from 'types';
 import Table from 'components/Table/Table';
 import { sortDateDesc } from 'utilities';
 import { StyledHeading, StyledWrapper } from './List.styles';
 import ListItem from './ListItem/ListItem';
 
-const IncomeList = ({ income, setIncome }) => {
-  const removeIncome = (i) => {
-    const newIncome = income.filter((v, index) => index !== i);
-    setIncome(newIncome);
+const IncomeList = ({ incomes, setIncomes }) => {
+  const removeIncome = (id) => {
+    const newIncome = incomes.filter((i) => i.id !== id);
+    setIncomes(newIncome);
   };
 
   return (
@@ -22,13 +23,23 @@ const IncomeList = ({ income, setIncome }) => {
         </Table.Header>
 
         <Table.Body>
-          {income.sort(sortDateDesc).map((value, index) => (
-            <ListItem key={index} income={value} index={index} removeIncome={removeIncome} />
+          {incomes.sort(sortDateDesc).map((income) => (
+            <ListItem
+              key={income.id}
+              income={income}
+              index={income.id}
+              removeIncome={removeIncome}
+            />
           ))}
         </Table.Body>
       </Table>
     </StyledWrapper>
   );
+};
+
+IncomeList.propTypes = {
+  incomes: incomesType.isRequired,
+  setIncomes: setIncomesType.isRequired,
 };
 
 export default IncomeList;

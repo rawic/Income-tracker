@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const useForm = (callback, validate) => {
   const [formFields, setFormFields] = useState({
     description: '',
-    amount: '',
+    amount: 0,
     date: '',
   });
 
@@ -12,10 +12,9 @@ const useForm = (callback, validate) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+      callback(formFields, setIsSubmitting);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [errors]);
+  }, [errors, callback, isSubmitting, formFields]);
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
@@ -25,14 +24,12 @@ const useForm = (callback, validate) => {
   };
 
   const handleChange = (event, date) => {
-    if (isSubmitting) setIsSubmitting(false);
-
     if (event) {
       event.persist();
       setFormFields((fields) => ({
         ...fields,
         [event.target.name]:
-          event.target.type === 'number' ? parseInt(event.target.value) : event.target.value,
+          event.target.type === 'number' ? parseFloat(event.target.value, 10) : event.target.value,
       }));
     } else {
       setFormFields((fields) => ({

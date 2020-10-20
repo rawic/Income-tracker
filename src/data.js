@@ -1,6 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const incomes = [
   {
-    id: 1,
+    id: uuidv4(),
     description: 'Income tracker - React app',
     date: {
       date: 'Mon Oct 12 2020 12:00:00 GMT+0200 (Central European Summer Time)',
@@ -9,7 +11,7 @@ const incomes = [
     amount: 1250.76,
   },
   {
-    id: 2,
+    id: uuidv4(),
     description: 'Mowing the lawn',
     date: {
       date: 'Fri Oct 09 2020 12:00:00 GMT+0200 (Central European Summer Time)',
@@ -18,7 +20,7 @@ const incomes = [
     amount: 50,
   },
   {
-    id: 3,
+    id: uuidv4(),
     description: 'Taking out the trash',
     date: {
       date: 'Fri Oct 02 2020 12:00:00 GMT+0200 (Central European Summer Time)',
@@ -27,7 +29,7 @@ const incomes = [
     amount: 5,
   },
   {
-    id: 5,
+    id: uuidv4(),
     description: 'Performance at a concert',
     date: {
       date: 'Thu Sep 24 2020 12:00:00 GMT+0200 (Central European Summer Time)',
@@ -36,7 +38,7 @@ const incomes = [
     amount: 500,
   },
   {
-    id: 4,
+    id: uuidv4(),
     description: 'Childcare',
     date: {
       date: 'Fri Sep 25 2020 12:00:00 GMT+0200 (Central European Summer Time)',
@@ -45,7 +47,7 @@ const incomes = [
     amount: 120,
   },
   {
-    id: 6,
+    id: uuidv4(),
     description: 'Pocket money',
     date: {
       date: 'Tue Sep 15 2020 12:00:00 GMT+0200 (Central European Summer Time)',
