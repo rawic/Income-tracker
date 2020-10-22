@@ -1,6 +1,10 @@
 import { DATE_REGEX } from './constants';
 
 export function isEmptyObject(obj) {
+  if (obj.constructor !== Object) {
+    throw 'Passed parameter is not an object';
+  }
+
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 
