@@ -1,8 +1,8 @@
-import { DATE_REGEX } from './constants';
+import { DATE_REGEX, ERRORS } from './constants';
 
 export function isEmptyObject(obj) {
   if (obj.constructor !== Object) {
-    throw Error('Passed parameter is not an object');
+    throw Error(ERRORS.NOT_AN_OBJECT);
   }
 
   return Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -18,21 +18,21 @@ export function validate(values) {
   const errors = {};
 
   if (!values.description) {
-    errors.description = 'Description is required';
+    errors.description = ERRORS.DESCRIPTION_REQUIRED;
   } else if (values.description.length < 5) {
-    errors.description = 'Description must be 5 or more characters';
+    errors.description = ERRORS.DESCRIPTION_LENGTH;
   }
 
   if (!values.amount) {
-    errors.amount = 'Amount is required';
+    errors.amount = ERRORS.AMOUNT_REQUIRED;
   } else if (Number.isNaN(values.amount)) {
-    errors.amount = 'Amount must be a number';
+    errors.amount = ERRORS.AMOUNT_NUMBER;
   }
 
   if (!values.date.formatted) {
-    errors.date = 'Date is required';
+    errors.date = ERRORS.DATE_REQUIRED;
   } else if (!values.date.formatted.match(DATE_REGEX)) {
-    errors.date = 'Date must be a valid date (DD/MM/YYYY)';
+    errors.date = ERRORS.DATE_FORMAT;
   }
 
   return errors;
