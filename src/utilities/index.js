@@ -2,7 +2,7 @@ import { DATE_REGEX } from './constants';
 
 export function isEmptyObject(obj) {
   if (obj.constructor !== Object) {
-    throw 'Passed parameter is not an object';
+    throw Error('Passed parameter is not an object');
   }
 
   return Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -34,6 +34,7 @@ export function validate(values) {
   } else if (!values.date.formatted.match(DATE_REGEX)) {
     errors.date = 'Date must be a valid date (DD/MM/YYYY)';
   }
+
   return errors;
 }
 

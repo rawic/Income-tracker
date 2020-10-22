@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 
+const initialFormFieldsValues = {
+  description: '',
+  amount: 0,
+  date: '',
+}
+
 const useForm = (callback, validate) => {
-  const [formFields, setFormFields] = useState({
-    description: '',
-    amount: 0,
-    date: '',
-  });
+  const [formFields, setFormFields] = useState(initialFormFieldsValues);
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,6 +15,7 @@ const useForm = (callback, validate) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback(formFields, setIsSubmitting);
+      setFormFields(initialFormFieldsValues);
     }
   }, [errors, callback, isSubmitting, formFields]);
 
