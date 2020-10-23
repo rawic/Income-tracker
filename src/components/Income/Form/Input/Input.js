@@ -17,7 +17,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   placeholder: null,
-  value: null,
+  value: '',
   autoComplete: null,
   width: null,
 };
