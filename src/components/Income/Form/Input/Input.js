@@ -12,14 +12,15 @@ Input.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   autoComplete: PropTypes.string,
   width: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
-  placeholder: null,
-  value: '',
-  autoComplete: null,
-  width: null,
+  placeholder: undefined,
+  value: undefined,
+  autoComplete: undefined,
+  width: undefined,
+  onChange: undefined,
 };
 
 export default Input;
