@@ -63,14 +63,16 @@ yarn
 
 ### Built With
 
-React:
-
+- React
 - Font Awesome
 - GSAP
 - Moment.js
 - React Day Picker
 - Styled Components
 - Styled Reset
+- uuid
+- Jest, React Testing Library
+- ESLint (airbnb), Prettier
 
 ## License
 
