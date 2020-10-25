@@ -49,6 +49,18 @@ https://github.com/rawic/income-tracker.git
 yarn
 ```
 
+### Checklist
+
+- Form validation ✔️
+- Toast notification (createPortal) ✔️
+- Format price (e.g. 3.871,48) ✔️
+- Hooks (Custom hooks) ✔️
+- Compound components ✔️
+- LocalStorage ✔️
+- PropTypes ✔️
+- Automated tests (Jest, React Testing Library) ✔️
+- Migrate to TypeScript ❌
+
 ### Built With
 
 React:
