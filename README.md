@@ -23,6 +23,31 @@
   <img src="readme/app-screenshot.jpg" alt="rawic.me - home page" style="max-width: 100%;">
 </a>
 
+### Checklist
+
+- Form validation ✔️
+- Toast notification (createPortal) ✔️
+- Format price (e.g. 3.871,48) ✔️
+- Hooks (Custom hooks) ✔️
+- Compound components ✔️
+- LocalStorage ✔️
+- PropTypes ✔️
+- Automated tests (Jest, React Testing Library) ✔️
+- Migrate to TypeScript ❌
+
+### Built with
+
+- React
+- Font Awesome
+- GSAP
+- Moment.js
+- React Day Picker
+- Styled Components
+- Styled Reset
+- uuid
+- Jest, React Testing Library
+- ESLint (airbnb), Prettier
+
 ## Getting started
 
 ### Prerequisites
@@ -43,36 +68,34 @@ Using Yarn:
 https://github.com/rawic/income-tracker.git
 ```
 
-2. Install NPM packages
+2. Go to the project directory
+
+```sh
+cd income-tracker
+```
+
+3. Install packages
 
 ```
 yarn
 ```
 
-### Checklist
+## Usage
 
-- Form validation ✔️
-- Toast notification (createPortal) ✔️
-- Format price (e.g. 3.871,48) ✔️
-- Hooks (Custom hooks) ✔️
-- Compound components ✔️
-- LocalStorage ✔️
-- PropTypes ✔️
-- Automated tests (Jest, React Testing Library) ✔️
-- Migrate to TypeScript ❌
+Run the app
+```sh
+yarn start
+```
 
-### Built With
+Test the app
+```sh
+yarn test
+```
 
-- React
-- Font Awesome
-- GSAP
-- Moment.js
-- React Day Picker
-- Styled Components
-- Styled Reset
-- uuid
-- Jest, React Testing Library
-- ESLint (airbnb), Prettier
+Build the app
+```sh
+yarn build
+```
 
 ## License
 
