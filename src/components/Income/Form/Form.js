@@ -54,6 +54,7 @@ const IncomeForm = ({ incomes, setIncomes }) => {
         step="0.01"
         placeholder="Amount"
         value={formFields.amount}
+        autoComplete="off"
         onChange={handleChange}
       />
 

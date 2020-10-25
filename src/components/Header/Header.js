@@ -8,7 +8,7 @@ const Header = ({ totalIncome }) => (
     <Heading>Income Tracker</Heading>
     <Total>
       PLN&nbsp;
-      {formatPrice(totalIncome)}
+      <span data-testid="total-income">{formatPrice(totalIncome)}</span>
     </Total>
   </header>
 );

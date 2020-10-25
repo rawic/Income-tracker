@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const initialFormFieldsValues = {
   description: '',
-  amount: null,
-  date: '',
+  amount: '',
+  date: ''
 };
 
 const useForm = (callback, validate) => {
