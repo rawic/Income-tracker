@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { arrayOf, exact, string, number, func } from 'prop-types';
 
 export const incomesType = arrayOf(
