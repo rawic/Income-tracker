@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const initialFormFieldsValues = {
   description: '',
   amount: '',
-  date: ''
+  date: {}
 };
 
 const useForm = (callback, validate) => {

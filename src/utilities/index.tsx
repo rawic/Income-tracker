@@ -1,6 +1,7 @@
+import { ValidateI, ErrorsI } from './index.interface';
 import { DATE_REGEX, ERRORS } from './constants';
 
-export function isEmptyObject(obj) {
+export function isEmptyObject(obj: object):boolean {
   if (obj.constructor !== Object) {
     throw Error(ERRORS.NOT_AN_OBJECT);
   }
@@ -8,14 +9,14 @@ export function isEmptyObject(obj) {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 
-export function formatPrice(price, options = { minimumFractionDigits: 2 }) {
+export function formatPrice(price: number, options: object = { minimumFractionDigits: 2 }) {
   const formattedPrice = price.toLocaleString('de-DE', options);
 
   return formattedPrice;
 }
 
-export function validate(values) {
-  const errors = {};
+export function validate(values: ValidateI) {
+  const errors = {} as ErrorsI;
 
   if (!values.description) {
     errors.description = ERRORS.DESCRIPTION_REQUIRED;
@@ -31,11 +32,11 @@ export function validate(values) {
 
   if (!values.date.formatted) {
     errors.date = ERRORS.DATE_REQUIRED;
-  } else if (!values.date.formatted.match(DATE_REGEX)) {
+  } else if (!DATE_REGEX.test(values.date.formatted)) {
     errors.date = ERRORS.DATE_FORMAT;
   }
 
   return errors;
 }
 
-export const sortDateDesc = (a, b) => new Date(b.date.date) - new Date(a.date.date);
+export const sortDateDesc = (a: any, b: any): number => Math.abs(new Date(b.date.date).getTime() - new Date(a.date.date).getTime());
