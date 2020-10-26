@@ -1,13 +1,7 @@
-import { ValidateI, ErrorsI } from './index.interface';
+import { isEmptyObjectI, ValidateI, ErrorsI } from './index.interface';
 import { DATE_REGEX, ERRORS } from './constants';
 
-export function isEmptyObject(obj: object):boolean {
-  if (obj.constructor !== Object) {
-    throw Error(ERRORS.NOT_AN_OBJECT);
-  }
-
-  return Object.keys(obj).length === 0 && obj.constructor === Object;
-}
+export const isEmptyObject = (obj: isEmptyObjectI): boolean => Object.keys(obj).length === 0;
 
 export function formatPrice(price: number, options: object = { minimumFractionDigits: 2 }) {
   const formattedPrice = price.toLocaleString('de-DE', options);

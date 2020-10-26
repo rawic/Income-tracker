@@ -15,7 +15,7 @@ const App = () => {
   const [totalIncome, setTotalIncome] = useState(0);
 
   useEffect(() => {
-    const total = incomes.reduce((prev, curr) => prev + parseFloat(curr.amount, 10), 0);
+    const total = incomes.reduce((prev: number, curr: { amount: string }) => prev + parseFloat(curr.amount), 0);
 
     setTotalIncome(total);
   }, [incomes]);

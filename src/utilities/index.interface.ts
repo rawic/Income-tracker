@@ -1,10 +1,9 @@
-interface DateI {
-  date: Date,
-  formatted: string
+export interface isEmptyObjectI {
+  [k: string]: string | number | boolean | object,
 }
 
 export interface ValidateI {
-  description: string, 
+  description: string,
   amount: string,
   date: {
     date: Date,

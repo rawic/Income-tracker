@@ -1,4 +1,4 @@
-export const DATE_REGEX = /^(0?[1-9]|[12][0-9]|3[01])[\\/](0?[1-9]|1[012])[\\/\\-]\d{4}$/g;
+export const DATE_REGEX = /^(0?[1-9]{1}|[12][0-9]|3[01])[/](0?[1-9]|1[012])[/\\-]\d{4}$/;
 
 export const ERRORS = {
   AMOUNT_NUMBER: 'Amount must be a number',
@@ -8,4 +8,4 @@ export const ERRORS = {
   DESCRIPTION_LENGTH: 'Description must be 5 or more characters',
   DESCRIPTION_REQUIRED: 'Description is required',
   NOT_AN_OBJECT: 'Passed parameter is not an object',
-}
+};

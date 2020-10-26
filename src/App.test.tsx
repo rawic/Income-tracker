@@ -11,7 +11,7 @@ import App from './App';
 describe('App', () => {
   test('Add new income', () => {
     render(
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} >
         <App />
       </ThemeProvider>
     );
@@ -23,9 +23,9 @@ describe('App', () => {
     const dateInput = screen.getByPlaceholderText('Date');
 
     const descriptionText = 'Income test description';
-    const amountValue = 13.75;
+    const amountValue = '13.75';
     const dateValue = '23/10/2020';
-    
+
     userEvent.paste(amountInput, amountValue);
     userEvent.paste(dateInput, dateValue);
     userEvent.paste(descriptionInput, descriptionText);
@@ -34,9 +34,9 @@ describe('App', () => {
 
     const newTotalIncomeValue = totalIncome.textContent;
 
-    expect(descriptionInput.value).toBe('');
-    expect(amountInput.value).toBe('');
-    expect(dateInput.value).toBe('');
+    expect((descriptionInput as HTMLInputElement).value).toBe('');
+    expect((amountInput as HTMLInputElement).value).toBe('');
+    expect((dateInput as HTMLInputElement).value).toBe('');
     expect(totalIncomeValue === newTotalIncomeValue).toBeFalsy();
 
     expect(screen.getByText('Income test description')).toBeInTheDocument();
