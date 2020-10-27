@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IncomesI } from 'utilities/income.interface'
 
-const incomes = [
+const incomes: IncomesI = [
   {
     id: uuidv4(),
     description: 'Income tracker - React app',

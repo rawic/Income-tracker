@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { initialFormFieldsValuesI } from './useForm.interface'
+import { ValidateI } from 'utilities/index.interface'
 
 const initialFormFieldsValues = {
   description: '',
@@ -6,7 +8,7 @@ const initialFormFieldsValues = {
   date: {}
 };
 
-const useForm = (callback, validate) => {
+const useForm = (callback, validate: ValidateI) => {
   const [formFields, setFormFields] = useState(initialFormFieldsValues);
 
   const [errors, setErrors] = useState({});
