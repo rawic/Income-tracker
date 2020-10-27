@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import useForm from 'hooks/useForm';
 import { validate } from 'utilities';
-import { incomesType, setIncomesType } from 'types';
 import ShowErrors from './ShowErrors/ShowErrors';
 import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
@@ -69,11 +68,6 @@ const IncomeForm = ({ incomes, setIncomes }: { incomes: IncomeI[], setIncomes: R
       <SubmitButton>Add income</SubmitButton>
     </StyledForm>
   );
-};
-
-IncomeForm.propTypes = {
-  incomes: incomesType.isRequired,
-  setIncomes: setIncomesType.isRequired,
 };
 
 export default IncomeForm;

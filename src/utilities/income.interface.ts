@@ -7,7 +7,3 @@ export interface IncomeI {
   },
   amount: number
 }
-
-export interface IncomesI {
-  [index: number]: IncomeI
-}
