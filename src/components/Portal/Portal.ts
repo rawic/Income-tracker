@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-const Portal = ({ children }) => {
+const Portal: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const portalRoot = document.getElementById('portal-root');
   const el = document.createElement('div');
 
@@ -9,10 +9,10 @@ const Portal = ({ children }) => {
     if(portalRoot) {
       portalRoot.appendChild(el);
 
-      return () => portalRoot.removeChild(el);
+      return () => { portalRoot.removeChild(el) };
     }
   }, [el, portalRoot]);
-
+  
   return createPortal(children, el);
 };
 

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { initialFormFieldsValuesI } from './useForm.interface'
 import { ValidateI } from 'utilities/index.interface'
 
 const initialFormFieldsValues = {
   description: '',
   amount: '',
-  date: {}
+  date: {
+    date: '',
+    formatted: ''
+  }
 };
 
-const useForm = (callback, validate: ValidateI) => {
+const useForm = (callback: (...args: any[]) => any, validate: (n: ValidateI) => any) => {
   const [formFields, setFormFields] = useState(initialFormFieldsValues);
 
   const [errors, setErrors] = useState({});
@@ -21,20 +23,21 @@ const useForm = (callback, validate: ValidateI) => {
     }
   }, [errors, callback, isSubmitting, formFields]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     if (event) event.preventDefault();
 
     setErrors(validate(formFields));
     setIsSubmitting(true);
   };
 
-  const handleChange = (event, date) => {
+  const handleChange = (event: React.FormEvent<HTMLFormElement> | null, date: { date: string, formatted: string }) => {
     if (event) {
       event.persist();
+      const target = event.target as HTMLInputElement;
       setFormFields((fields) => ({
         ...fields,
-        [event.target.name]:
-          event.target.type === 'number' ? parseFloat(event.target.value, 10) : event.target.value,
+        [target.name]:
+          target.type === 'number' ? parseFloat(target.value) : target.value,
       }));
     } else {
       setFormFields((fields) => ({

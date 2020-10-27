@@ -5,7 +5,7 @@ export interface IncomeI {
     date: string,
     formatted: string
   },
-  amount: number | string
+  amount: number
 }
 
 export interface IncomesI {

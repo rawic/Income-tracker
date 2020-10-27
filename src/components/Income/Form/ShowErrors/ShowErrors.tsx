@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import FadeInAnimation from 'components/FadeInAnimation/FadeInAnimation';
 import Portal from 'components/Portal/Portal';
 import Toast from 'components/Toast/Toast';
 import { isEmptyObject } from 'utilities';
 
-const ShowErrors = React.memo(({ errors }) => {
+const ShowErrors = React.memo(({ errors }: ShowErrorProps) => {
   if (isEmptyObject(errors)) return null;
 
   return (
@@ -21,8 +20,10 @@ const ShowErrors = React.memo(({ errors }) => {
   );
 });
 
-ShowErrors.propTypes = {
-  errors: PropTypes.objectOf(PropTypes.string).isRequired,
-};
+type ShowErrorProps = {
+  errors: {
+    [k: string]: string
+  }
+}
 
 export default ShowErrors;

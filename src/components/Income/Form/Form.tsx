@@ -8,9 +8,11 @@ import Input from './Input/Input';
 import SubmitButton from './SubmitButton/SubmitButton';
 import DayPicker from './DayPicker/DayPicker';
 
+import { IncomeI } from 'utilities/income.interface'
+
 import StyledForm from './Form.styles';
 
-const IncomeForm = ({ incomes, setIncomes }) => {
+const IncomeForm = ({ incomes, setIncomes }: { incomes: IncomeI[], setIncomes: React.Dispatch<any> }) => {
   const addIncome = useCallback(
     (formFields, setIsSubmitting) => {
       setIncomes([...incomes, { id: uuidv4(), ...formFields }]);
@@ -19,12 +21,12 @@ const IncomeForm = ({ incomes, setIncomes }) => {
     [incomes, setIncomes]
   );
 
-  const { formFields, errors, handleChange, handleSubmit, isSubmitting } = useForm(
+  const { formFields, errors, handleChange, handleSubmit } = useForm(
     addIncome,
     validate
   );
 
-  const handleDayChange = (selectedDay = '', modifiers, dayPickerInput) => {
+  const handleDayChange = (selectedDay = '', _: any, dayPickerInput: { getInput: () => { (): any; new(): any; value: string; }; }) => {
     const incomeDate = {
       date: selectedDay.toString(),
       formatted: dayPickerInput.getInput().value.trim(),
@@ -35,7 +37,7 @@ const IncomeForm = ({ incomes, setIncomes }) => {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <ShowErrors errors={errors} isSubmitting={isSubmitting} />
+      <ShowErrors errors={errors} />
 
       <Input
         type="text"

@@ -6,13 +6,13 @@ export interface ValidateI {
   description: string,
   amount: string,
   date: {
-    date: Date,
+    date: string,
     formatted: string
   }
 }
 
 export interface ErrorsI {
-  description: string
-  amount: string,
-  date: string
+  description?: string
+  amount?: string,
+  date?: string
 }

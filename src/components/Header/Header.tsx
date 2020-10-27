@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { formatPrice } from 'utilities';
 import { Heading, Total } from './Header.styles';
 
-const Header = ({ totalIncome }) => (
+const Header: React.FC<{ totalIncome: number }>= ({ totalIncome }) => (
   <header>
     <Heading>Income Tracker</Heading>
     <Total>

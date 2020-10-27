@@ -6,7 +6,7 @@ import Header from 'components/Header/Header';
 import IncomeForm from 'components/Income/Form/Form';
 import IncomeList from 'components/Income/List/List';
 
-import { IncomesI, IncomeI } from 'utilities/income.interface'
+import { IncomeI } from 'utilities/income.interface'
 
 const App = () => {
   const { storedValue: incomes, setStoredValue: setIncomes }: { storedValue: IncomeI[], setStoredValue: React.Dispatch<any> } = useLocalStorage(
@@ -17,7 +17,7 @@ const App = () => {
   const [totalIncome, setTotalIncome] = useState(0);
 
   useEffect(() => {
-    const total = incomes.reduce((prev, curr) => prev + parseFloat(curr.amount), 0);
+    const total = incomes.reduce((prev, curr) => prev + curr.amount, 0);
 
     setTotalIncome(total);
   }, [incomes]);
