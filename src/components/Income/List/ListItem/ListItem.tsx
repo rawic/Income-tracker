@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { formatPrice } from 'utilities';
 import { StyledCell, StyledRemoveBtn, StyledRow } from './ListItem.styles';
 
-const ListItem = ({ income: { id, description, amount, date }, removeIncome }) => {
+import { IncomeI } from 'utilities/income.interface'
+
+const ListItem = ({ income: { id, description, amount, date }, removeIncome }: { income: IncomeI, removeIncome: (id: string) => void }) => {
   const themeContext = useContext(ThemeContext);
 
-  const handleRemove = (incomeId) => {
+  const handleRemove = (incomeId: string) => {
     removeIncome(incomeId);
   };
 
@@ -33,19 +34,6 @@ const ListItem = ({ income: { id, description, amount, date }, removeIncome }) =
       </StyledCell>
     </StyledRow>
   );
-};
-
-ListItem.propTypes = {
-  income: PropTypes.exact({
-    id: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    amount: PropTypes.number.isRequired,
-    date: PropTypes.exact({
-      date: PropTypes.string.isRequired,
-      formatted: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-  removeIncome: PropTypes.func.isRequired,
 };
 
 export default ListItem;
