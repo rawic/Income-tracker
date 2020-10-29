@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { formatPrice } from 'utilities';
 import { Heading, Total } from './Header.styles';
 
@@ -12,9 +11,5 @@ const Header: React.FC<{ totalIncome: number }>= ({ totalIncome }) => (
     </Total>
   </header>
 );
-
-Header.propTypes = {
-  totalIncome: PropTypes.number.isRequired,
-};
 
 export default Header;
