@@ -1,11 +1,7 @@
 import React from 'react';
 import { StyledHeader, StyledHeading } from './Table.styles';
 
-interface TableCompositionI {
-  Header: React.FC<{ children: string }>,
-  Heading: React.FC<{ children: string }>,
-  Body: React.FC<{ children: string }>,
-}
+import TableCompositionI from './Table.interface'
 
 const Header: React.FC<{ children: string }> = ({ children }) => <StyledHeader>{children}</StyledHeader>;
 

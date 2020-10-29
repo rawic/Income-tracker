@@ -1,11 +1,8 @@
 import React from 'react';
 import { StyledWrapper, StyledToast } from './Toast.style';
+import ToastCompositionI from './Toast.interface';
 
-const Toast = ({ children }: ToastProps) => <StyledToast>{children}</StyledToast>;
-
-type ToastProps = {
-  children: string
-}
+const Toast: React.FC & ToastCompositionI = ({ children }) => <StyledToast>{children}</StyledToast>;
 
 Toast.Wrapper = StyledWrapper;
 

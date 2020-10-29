@@ -6,7 +6,7 @@ import { StyledCell, StyledRemoveBtn, StyledRow } from './ListItem.styles';
 
 import { IncomeI } from 'utilities/income.interface'
 
-const ListItem = ({ income: { id, description, amount, date }, removeIncome }: { income: IncomeI, removeIncome: (id: string) => void }) => {
+const ListItem: React.FC<{ income: IncomeI, removeIncome: (id: string) => void }> = ({ income: { id, description, amount, date }, removeIncome }) => {
   const themeContext = useContext(ThemeContext);
 
   const handleRemove = (incomeId: string) => {

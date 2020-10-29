@@ -4,7 +4,9 @@ import Portal from 'components/Portal/Portal';
 import Toast from 'components/Toast/Toast';
 import { isEmptyObject } from 'utilities';
 
-const ShowErrors = React.memo(({ errors }: ShowErrorProps) => {
+import ShowErrorsI from './ShowErrors.interface'
+
+const ShowErrors: React.FC<{ errors: ShowErrorsI }> = React.memo(({ errors }) => {
   if (isEmptyObject(errors)) return null;
 
   return (
@@ -19,11 +21,5 @@ const ShowErrors = React.memo(({ errors }: ShowErrorProps) => {
     </Portal>
   );
 });
-
-type ShowErrorProps = {
-  errors: {
-    [k: string]: string
-  }
-}
 
 export default ShowErrors;

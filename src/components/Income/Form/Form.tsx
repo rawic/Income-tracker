@@ -11,7 +11,7 @@ import { IncomeI } from 'utilities/income.interface'
 
 import StyledForm from './Form.styles';
 
-const IncomeForm = ({ incomes, setIncomes }: { incomes: IncomeI[], setIncomes: React.Dispatch<any> }) => {
+const IncomeForm: React.FC<{ incomes: IncomeI[], setIncomes: React.Dispatch<any> }> = ({ incomes, setIncomes }) => {
   const addIncome = useCallback(
     (formFields, setIsSubmitting) => {
       setIncomes([...incomes, { id: uuidv4(), ...formFields }]);
