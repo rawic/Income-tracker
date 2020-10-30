@@ -1,12 +1,14 @@
 import React, { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { gsap } from 'gsap';
+
+import FadeInAnimationI from './FadeInAnimation.interface'
 
 const distance = 50;
 
-const FadeInAnimation = ({ children, wrapperElement = 'div', delay = 0 }) => {
+const FadeInAnimation: React.FC<FadeInAnimationI> = ({ children, tag: wrapperElement = 'div', delay = 0 }) => {
   const Component = wrapperElement;
-  const compRef = useRef(null);
+  const compRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     gsap.from(compRef.current, 0.5, {
       y: distance,
@@ -20,17 +22,6 @@ const FadeInAnimation = ({ children, wrapperElement = 'div', delay = 0 }) => {
     });
   }, [compRef, delay]);
   return <Component ref={compRef}>{children}</Component>;
-};
-
-FadeInAnimation.propTypes = {
-  children: PropTypes.node.isRequired,
-  wrapperElement: PropTypes.string,
-  delay: PropTypes.number,
-};
-
-FadeInAnimation.defaultProps = {
-  wrapperElement: 'div',
-  delay: 0,
 };
 
 export default FadeInAnimation;
