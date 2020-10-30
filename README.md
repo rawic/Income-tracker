@@ -33,7 +33,7 @@
 - LocalStorage ✔️
 - PropTypes ✔️
 - Automated tests (Jest, React Testing Library) ✔️
-- Migrate to TypeScript ❌
+- Migrate to TypeScript ✔️
 
 ### Built with
 
