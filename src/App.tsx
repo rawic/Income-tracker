@@ -6,10 +6,10 @@ import Header from 'components/Header/Header';
 import IncomeForm from 'components/Income/Form/Form';
 import IncomeList from 'components/Income/List/List';
 
-import { IncomeI } from 'utilities/income.interface'
+import AppI from './App.interface'
 
 const App = () => {
-  const { storedValue: incomes, setStoredValue: setIncomes }: { storedValue: IncomeI[], setStoredValue: React.Dispatch<any> } = useLocalStorage(
+  const { storedValue: incomes, setStoredValue: setIncomes }: AppI = useLocalStorage(
     'incomes',
     initialIncomes
   );

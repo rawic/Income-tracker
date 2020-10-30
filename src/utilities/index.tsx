@@ -33,4 +33,4 @@ export function validate(values: ValidateI) {
   return errors;
 }
 
-export const sortDateDesc = (a: any, b: any): number => Math.abs(new Date(b.date.date).getTime() - new Date(a.date.date).getTime());
+export const sortDateDesc = (a: any, b: any): number => new Date(b.date.date).getTime() - new Date(a.date.date).getTime();

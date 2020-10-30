@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import DayPickerInputWrapper from './DayPickerInputWrapper';
+import DayPickerInputWrapper from './DayPickerInputWrapper/DayPickerInputWrapper';
 
 const StyledDayPicker = styled(DayPickerInputWrapper)`
   &.DayPickerInput {
